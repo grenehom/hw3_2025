@@ -1,127 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="images/logo-drk.png" />
-    <link rel="stylesheet" type="text/css" href="css/html5reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Newer Company Inc.</title>
-  </head>
+/* Step 1: Add an underline when links in the navigation are hovered or focused */
 
-  <body>
-    <div class="skip"><a href="#main">Skip to Main Content</a></div>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#method">Method</a></li>
-          <li><a href="#clients">Clients</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="container" id="main">
-      <div class="overview">
-        <h1>New Company Inc.</h1>
-        <p>
-          Creating a better workspace by transforming the office paradigm. We're
-          helping employees make their mark on the world through effective
-          workspace management. We would love to meet you and explore
-          collaboration opportunities.
-        </p>
-      </div>
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
 
-      <div class="about-image" id="about">
-        <img src="images/about.jpg" alt="" />
-      </div>
+/* Step 2a: Position the default position for the skip class element */
 
-      <div tabindex="0" class="about text-block">
-        <h2>About</h2>
-        <p>
-          Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam
-          pulvinar euismod dolor, eu aliquam nibh efficitur vel. Phasellus sit
-          amet velit congue, finibus nibh eu, ultricies magna. Donec eu ultrices
-          eros. Donec sit amet metus nisi. Nulla tincidunt justo non risus
-          aliquam, sit amet lacinia lacus commodo. Aliquam ultricies ante sed
-          semper porta. Integer eros tortor, convallis eu ultricies malesuada,
-          fringilla sed libero. Aenean molestie rhoncus leo eu imperdiet. Mauris
-          eget molestie massa. Maecenas auctor sapien a arcu laoreet, et
-          consectetur odio scelerisque. Praesent ac turpis sed neque porttitor
-          finibus faucibus quis tortor. Morbi tempus turpis lacus, nec laoreet
-          tellus rhoncus quis. Aliquam vitae dolor urna. In pellentesque
-          ullamcorper turpis, commodo cursus mauris condimentum eget.
-        </p>
-      </div>
+.skip a {
+  position: absolute;
+  top: -40px;
+  overflow: hidden;
+}
 
-      <div class="method-image" id="method">
-        <img src="images/method.jpg" alt="" />
-      </div>
+/* Step 2b: Position the skip class element when it is in focus */
 
-      <div tabindex="0" class="method text-block">
-        <h2>Method</h2>
-        <p>
-          Praesent eu lorem sed eros pellentesque tincidunt. Duis nec dapibus
-          dui. Curabitur cursus dapibus lectus, at molestie ipsum hendrerit
-          eget. Aliquam magna ipsum, gravida et ligula id, tincidunt facilisis
-          arcu. In blandit, magna a pretium mollis, mauris odio cursus eros,
-          tempor rutrum diam est non enim. Nunc porttitor imperdiet placerat.
-          Mauris aliquam, purus nec viverra placerat, ipsum est sollicitudin
-          ipsum, vel lacinia justo justo rutrum libero.
-        </p>
-        <p>
-          Praesent eu lorem sed eros pellentesque tincidunt. Duis nec dapibus
-          dui. Curabitur cursus dapibus lectus, at molestie ipsum hendrerit
-          eget. Aliquam magna ipsum, gravida et ligula id, tincidunt facilisis
-          arcu. In blandit, magna a pretium mollis, mauris odio cursus eros,
-          tempor rutrum diam est non enim. Nunc porttitor imperdiet placerat.
-          Mauris aliquam, purus nec viverra placerat, ipsum est sollicitudin
-          ipsum, vel lacinia justo justo rutrum libero.
-        </p>
-      </div>
+.skip a:focus {
+  top: 20px;
+}
 
-      <div class="clients-image" id="clients">
-        <img src="images/clients.jpg" alt="" />
-      </div>
+/* Step 3: Style all elements when in focus */
+*:focus {
+  border: 2px solid black;
+}
 
-      <div tabindex="0" class="clients text-block">
-        <h2>Clients</h2>
-        <p>
-          Nullam accumsan efficitur accumsan. Nunc arcu ante, iaculis nec leo
-          vel, iaculis cursus odio. Vestibulum at elit eu nisi finibus placerat
-          ac a lorem. Donec congue iaculis quam, non tempor ipsum accumsan et.
-          Duis risus tellus, maximus sit amet varius pulvinar, faucibus in orci.
-          Morbi ac placerat lectus. Sed leo augue, fringilla eu viverra auctor,
-          dapibus vitae odio. Quisque non porttitor sem, vitae dictum tortor.
-          Maecenas interdum sollicitudin mattis. Pellentesque accumsan elit eget
-          placerat finibus. Phasellus eget elit quis est mattis porta non non
-          metus. Pellentesque lacus dui, tempor ac elit at, convallis ultricies
-          velit. Fusce viverra dui dui, vitae feugiat erat ornare sit amet.
-          Maecenas diam ligula, venenatis id dignissim et, convallis non tellus.
-          Aenean vehicula laoreet vehicula.
-        </p>
-      </div>
+/* Step 4: Style the container */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 15px;
+}
 
-      <div class="contact-image" id="contact">
-        <img src="images/contact.jpg" alt="" />
-      </div>
+/* Step 5: Add the background image to the first div in the grid */
+.container > :first-child {
+  background-image: url("../images/header.jpg");
+  grid-column: 1/-1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-      <div tabindex="0" class="contact text-block">
-        <h2>Contact</h2>
-        <p>
-          Etiam dolor ex, vehicula nec augue in, lobortis volutpat turpis.
-          Pellentesque vel vestibulum metus. Nam luctus porta sapien a
-          malesuada. Nunc porttitor imperdiet placerat. Mauris aliquam, purus
-          nec viverra placerat, ipsum est sollicitudin ipsum, vel lacinia justo
-          justo rutrum libero.
-        </p>
-      </div>
-    </main>
-    <footer>
-      <p>
-        University of Michigan School of Information <br />
-        &copy; Colleen van Lent, Drew Asselin - Web Design 2019-2020
-      </p>
-    </footer>
-  </body>
-</html>
+/* Steps 6 and 7: Place elements in the grid */
+.about {
+  grid-column: 2 / span 1;
+  grid-row: 2;
+}
+
+.method {
+  grid-column: 2 / span 1;
+  grid-row: 3;
+}
+
+.clients {
+  grid-column: 2 / span 1;
+  grid-row: 4;
+}
+
+.contact {
+  grid-column: 2 / span 1;
+  grid-row: 5;
+}
+
+.about-image {
+  grid-column: 1/-1;
+  max-height: 600px;
+  grid-row: 2;
+  overflow: hidden;
+}
+
+.method-image {
+  grid-column: 1/-1;
+  grid-row: 3;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.clients-image {
+  grid-column: 1/-1;
+  grid-row: 4;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.contact-image {
+  grid-column: 1/-1;
+  grid-row: 5;
+  max-height: 600px;
+  overflow: hidden;
+}
+.text-block {
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+/* Add your media query here */
+
+@media screen and (min-width: 800px) {
+  /* Step 9: Write the selector/rule property to style the nav element */
+
+  nav {
+    text-align: right;
+    padding: 30px 0px 30px 0px;
+  }
+
+  /* Step 10: Write the selector/rule property to update the .container class */
+
+  .container {
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+  }
+
+  /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+
+  .about,
+  .clients,
+  .method-image,
+  .contact-image {
+    grid-column: 3 / span 2;
+  }
+
+  .method,
+  .contact,
+  .about-image,
+  .clients-image {
+    grid-column: 2 / span 2;
+  }
+
+  /* Step 13:Write the selector/rule property to update the .text-block class */
+
+  .text-block {
+    max-height: 250px;
+    overflow: auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #737373;
+  font-size: 18px;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+}
+
+.overview {
+  background-attachment: fixed;
+  /* Parallax effect */
+  background-position: center;
+  /* Parallax effect */
+  background-repeat: no-repeat;
+  /* Parallax effect */
+  background-size: cover;
+  /* Parallax effect */
+  color: white;
+  height: 400px;
+  /* Parallax effect */
+}
+
+.overview p {
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav li {
+  display: inline;
+  padding-right: 20px;
+}
+
+nav a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skip a {
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+nav {
+  background-color: #ddd;
+  padding: 25px 0;
+  text-align: left;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.text-block {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    /* Removes scroll animation */
+  }
+
+  .skip a {
+    -webkit-transition: none;
+    /* sets to default setting */
+    transition: none;
+    /* sets to default setting */
+  }
+
+  /*Turn off parallax*/
+  header {
+    background-attachment: initial;
+  }
+}
