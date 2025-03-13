@@ -44,7 +44,7 @@ nav a:focus {
 /* Steps 6 and 7: Place elements in the grid */
 .about {
   grid-column: 2 / span 1;
-  grid-row: 2;
+ grid-row: 2; /* give an end  */
 }
 
 .method {
@@ -104,7 +104,7 @@ nav a:focus {
     text-align: right;
     padding: 30px 0px 30px 0px;
   }
-
+/*  */
   /* Step 10: Write the selector/rule property to update the .container class */
 
   .container {
